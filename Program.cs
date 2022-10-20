@@ -8,7 +8,7 @@ namespace TextLesson
     {
         static void Main(string[] args)
         {
-            
+           
             
         }
         static int BinarySearchPerson(List<Person> mas, Person human) {
@@ -25,34 +25,34 @@ namespace TextLesson
 
             
         }
-        static List<Person> FindPerson (List<Person> mas, PersomСriterion сriterion, string valus) {
+        static List<Person> FindPerson (List<Person> mas, PersomСriterion сriterion, string value) {
             int phone=0;
             if (сriterion == PersomСriterion.Phone) {
 
-                if (!int.TryParse(valus, out  phone)) throw new ArgumentException(" no good");
+                if (!int.TryParse(value, out  phone)) throw new ArgumentException(" no good");
 
             }            
             return сriterion switch
             {
-                PersomСriterion.FirstName =>mas.Where( (p) => p.FirstName == valus).ToList(),
-                PersomСriterion.LastName => mas.Where((p) => p.LastName == valus).ToList(),
+                PersomСriterion.FirstName =>mas.Where( (p) => p.FirstName == value).ToList(),
+                PersomСriterion.LastName => mas.Where((p) => p.LastName == value).ToList(),
                 PersomСriterion.Phone => mas.Where((p) => p.Phone == phone).ToList()     
             };
         }
 
-        static List<Person> FindPersonWithPredicate(List<Person> mas, PersomСriterion сriterion, string valus)
+        static List<Person> FindPersonWithPredicate(List<Person> mas, PersomСriterion сriterion, string value)
         {
             int phone = 0;
             if (сriterion == PersomСriterion.Phone)
             {
 
-                if (!int.TryParse(valus, out phone)) throw new ArgumentException(" no good");
+                if (!int.TryParse(value, out phone)) throw new ArgumentException(" no good");
 
             }
             Predicate<Person> pred= сriterion switch
             {
-                PersomСriterion.FirstName =>(p) => p.FirstName == valus,
-                PersomСriterion.LastName => (p) => p.LastName == valus,
+                PersomСriterion.FirstName =>(p) => p.FirstName == value,
+                PersomСriterion.LastName => (p) => p.LastName == value,
                 PersomСriterion.Phone => (p) => p.Phone == phone
             };
             List<Person> result = new List<Person>();
