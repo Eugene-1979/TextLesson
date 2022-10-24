@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace TextLesson
 {
-    internal class Class1
+    internal class ListEmptyExeption:Exception
     {
+       internal ListEmptyExeption():base("Empty List")
+        {
+            
+        }
+
+
     }
 }

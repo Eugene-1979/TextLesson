@@ -10,18 +10,7 @@ namespace TextLesson
     {
         static void Main(string[] args)
         {
-             /*var range = new List<int>() { 1,1,1,1,2, 3, 4, 5, 6, 7, 8, 9 };
-             foreach (var VARIABLE in range)
-             {
-                 Console.WriteLine(MyBinarySearch(range,VARIABLE));
-             }*/
-             var b = new List<int> { }.Count();
-            bool f= b == 0;
-             new Regex("[a-z,A-Z,а-ябА_Я]+").IsMatch("sdfghj");
-             new Regex("[a-z,A-Z,а-ябА_Я]+").IsMatch("sdллллj");
-             new Regex("\b[a-z,A-Z,а-ябА_Я]+\b").IsMatch("sdfg1hj");
-             new Regex("\b[a-z,A-Z,а-ябА_Я]+\b").IsMatch("sdf?ghj");
-             // MyBinarySearch(range, 5);
+          
 
         }
         static int BinarySearchPerson(List<Person> mas, Person human) {
@@ -31,7 +20,8 @@ namespace TextLesson
             string RegexHuman = "\b[a-z,A-Z,а-ябА_Я]+\b";
             if (!new Regex(RegexHuman).IsMatch(HumanString))
                 throw new ArgumentException("incorrect human");
-            
+            /*myNewExeption*/
+            if (mas.Count() == 0) throw new ListEmptyExeption();
 
 
             List<String> result=mas.
@@ -87,7 +77,7 @@ namespace TextLesson
             string RegexHuman = "\b[a-z,A-Z,а-ябА_Я]+\b";
             if (!new Regex(RegexHuman).IsMatch(value))
                 throw new ArgumentException("incorrect value");
-            // if(mas.Count)
+            if (mas.Count() == 0) throw new ListEmptyExeption();
 
 
 
@@ -113,6 +103,8 @@ namespace TextLesson
             string RegexHuman = "\b[a-z,A-Z,а-ябА_Я]+\b";
             if (!new Regex(RegexHuman).IsMatch(value))
                 throw new ArgumentException("incorrect value");
+            if (mas.Count() == 0) throw new ListEmptyExeption();
+
 
             int phone = 0;
             if (сriterion == PersomСriterion.Phone)
